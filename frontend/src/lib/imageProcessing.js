@@ -100,3 +100,21 @@ export function getRoiForCrop(pixelData, width, height) {
 
     return rv;
 }
+
+export function isImageBlank(pixelData, width, height) {
+    let isBlank = true;
+
+    for (let i = 0; i < height; i++) {
+        if (isBlank) {
+            for (let j = 0; j < width; j++) {
+                if (isBlank) {
+                    if (pixelData[i][j] !== 0) {
+                        isBlank = false;
+                    }
+                }
+            }
+        }
+    }
+
+    return isBlank;
+}

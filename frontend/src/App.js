@@ -15,6 +15,7 @@ function App() {
   const loadModel = async () => {
     const model = await loadLayersModel("http://localhost:3000/tfjs_model/model.json");
     setModel(model);
+    // console.log("Model loaded successfully.");
   }
 
   useEffect(() => {
@@ -23,17 +24,15 @@ function App() {
 
 
   return (
-    <div className="BackgroundContainer">
-      <div className="Container">
-        <Canvas />
+    <div className='container' >
+      <Canvas />
 
-        <div className="ButtonsDiv">
-          <ResetButton setPredictionText={setPredictionText} />
-          <RecognizeButton model={model} setPredictionText={setPredictionText} />
-        </div>
-
-        <h4 className="predictionText">{predictionText}</h4>
+      <div className="buttons-container">
+        <ResetButton setPredictionText={setPredictionText} />
+        <RecognizeButton model={model} setPredictionText={setPredictionText} />
       </div>
+
+      <h4 className="predictionText">{predictionText}</h4>
     </div>
   );
 }

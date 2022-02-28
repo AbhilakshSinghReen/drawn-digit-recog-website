@@ -8,5 +8,5 @@ export default function ResetButton({ setPredictionText }) {
     setPredictionText("Draw a digit and hit recognize!");
   }
 
-  return <button onClick={resetButtonOnClick}>Reset</button>
+  return <button className="button" onClick={resetButtonOnClick}>Reset</button>
 }
